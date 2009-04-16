@@ -1,2 +1,12 @@
-<h1>Admin::Feeds#new</h1>
-<p>Find me in app/views/admin/feeds/new.html.erb</p>
+<h2>Admin::Feeds#new</h2>
+
+<% form_for @feed, :url => admin_feeds_path do |f| -%>
+<%= f.error_messages %>
+<p>
+  <label>URL:</label>
+  <%= f.text_field :url %>
+</p>
+<p>
+  <%= f.submit 'Add This Feed' %>
+</p>
+<% end -%>

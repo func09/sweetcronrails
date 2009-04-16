@@ -3,9 +3,13 @@ require 'rfeedfinder'
 
 class Feed < ActiveRecord::Base
   validates_format_of :url, :with => %r{^https?://}
+  validates_uniqueness_of :url, :message => 'すでに登録済みのフィードです'
 
   before_create :update_feed_info
 
+  # ステータスがアクティブなフィード
+  named_scope :active ,:conditions => ['status = ?','active']
+  
   private
   # URLからフィードの情報を取得し、インスタンスに設定する
   def update_feed_info
