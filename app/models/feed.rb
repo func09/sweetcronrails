@@ -2,6 +2,9 @@ require 'feed-normalizer'
 require 'rfeedfinder'
 
 class Feed < ActiveRecord::Base
+
+  has_many :items
+  
   validates_format_of :url, :with => %r{^https?://}
   validates_uniqueness_of :url, :message => 'すでに登録済みのフィードです'
 
