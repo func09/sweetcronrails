@@ -28,14 +28,15 @@ module SweetCron
           logger.debug "- #{res.url}"
           logger.debug "- #{res.items.size}"
 
+          # 取得したエントリーをループ処理
           res.items.each do |item|
-            logger.debug "-- #{item.title}"
-            logger.debug "-- #{item.content.slice(0,30)}"
-            logger.debug "-- #{item.id}"
-            logger.debug "-- #{item.url}"
-            logger.debug "-- #{item.author}"
-            logger.debug "-- #{item.categories}"
-            logger.debug "-- #{item.date_published.to_s(:short)}"
+            logger.debug "-- title:#{item.title}"
+            logger.debug "-- content:#{item.content.slice(0,30)}"
+            logger.debug "-- id:#{item.id}"
+            logger.debug "-- url:#{item.url}"
+            logger.debug "-- author:#{item.author}"
+            logger.debug "-- categories:#{item.categories}"
+            logger.debug "-- published#{item.date_published.to_s(:short)}"
             logger.debug ""
           end
           
