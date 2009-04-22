@@ -1,5 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
+  map.resources :items
+  
   map.namespace :admin do |admin|
     admin.resources :feeds
   end

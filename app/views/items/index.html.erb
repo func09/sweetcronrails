@@ -1,0 +1,11 @@
+<h1>Items#index</h1>
+<ul>
+  <% for item in @items %>
+  <li>
+    <div>
+      <h3>[<%= h item.feed.title %>] <%= h item.title %> <span>[<%= h(item.modified_on.to_s(:short)) %>]</span></h3>
+      <p><%= truncate(item.body) %></p>
+    </div>
+  </li>
+  <% end %>
+</ul>

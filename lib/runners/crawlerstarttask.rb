@@ -3,8 +3,7 @@ class CrawlerStartTask
   @@logger = Logger.new(File.join(RAILS_ROOT, "log", "crawler.log"))
 
   def self.logger
-    #@@logger
-    @logger ||= Logger.new STDOUT
+    @@logger ||= Logger.new STDOUT
   end
 
   def self.execute
