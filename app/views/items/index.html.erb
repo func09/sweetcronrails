@@ -4,6 +4,8 @@
   <li>
     <div>
       <h3>[<%= h item.feed.title %>] <%= h item.title %> <span>[<%= h(item.modified_on.to_s(:short)) %>]</span></h3>
+      <p><%= link_to item.link, item.link %></p>
+      <p><%= h(item.body) %></p>
       <p><%= truncate(item.body) %></p>
     </div>
   </li>

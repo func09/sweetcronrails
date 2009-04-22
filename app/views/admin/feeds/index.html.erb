@@ -9,7 +9,7 @@
     <ul>
       <li><%= feed.title %></li>
       <li><%= feed.url %></li>
-      <li>0 items</li>
+      <li><%= feed.items.size %> items</li>
       <li><%= link_to 'X', admin_feed_path(feed), :method => :delete, :confirm => 'Are you sure?' %></li>
     </ul>
   </div>
