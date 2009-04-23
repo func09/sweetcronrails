@@ -3,10 +3,11 @@
   <% for item in @items %>
   <li>
     <div>
-      <h3>[<%= h item.feed.title %>] <%= h item.title %> <span>[<%= h(item.modified_on.to_s(:short)) %>]</span></h3>
+      <p>I posted to <%= item.feed.domain %></p>
+      <h3>[<%= h item.feed.title %>] <%= h item.title %></h3>
       <p><%= link_to item.link, item.link %></p>
-      <p><%= h(item.body) %></p>
-      <p><%= truncate(item.body) %></p>
+      <p><%= truncate(strip_tags(item.body)) %></p>
+      <p><%= distance_of_time_in_words_to_now(item.modified_on) %>前</p>
     </div>
   </li>
   <% end %>

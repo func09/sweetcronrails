@@ -3,13 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Feed do
 
   def create_feed params = {}
-    feed = Feed.new({
-      :title  => "title",
-      :domain => "www.example.com",
-      :url    => "http://www.example.com/index.rss",
-      :icon   => "http://www.example.com/favicon.ico",
-      :status => "active",
-      }.merge(params))
+    feed = Factory.build(:feed, params)
     feed.stub!(:update_feed_info)
     feed
   end

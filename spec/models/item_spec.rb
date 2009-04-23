@@ -1,12 +1,17 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Item do
+
+  def create_item params = {}
+    item = Factory.build(:item, params)
+  end
+  
   before(:each) do
-    @valid_attributes = {
-    }
+    @item = create_item
   end
 
-  it "should create a new instance given valid attributes" do
-    Item.create!(@valid_attributes)
+  it "アイテムは正常に生成できること" do
+    @item.save.should be_true
   end
+
 end
